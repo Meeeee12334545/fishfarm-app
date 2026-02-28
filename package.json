@@ -9,8 +9,7 @@
     "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
     "start": "cd server && npm start",
     "prebuild": "cd client && npm ci",
-    "build": "cd client && npm run build",
-    "build:full": "npm run install:deps && npm run build"
+    "build": "cd client && npm ci && npm run build"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
