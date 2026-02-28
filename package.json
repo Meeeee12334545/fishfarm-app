@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Wide Bay Aquatics - Fish Farm Management App",
   "scripts": {
-    "postinstall": "cd server && npm install && cd ../client && npm install",
-    "install:all": "cd server && npm install && cd ../client && npm install",
+    "postinstall": "npm run install:deps",
+    "install:deps": "cd server && npm ci && cd ../client && npm ci",
+    "install:all": "npm run install:deps",
     "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
     "start": "cd server && npm start",
-    "build": "cd client && npm install && npm run build"
+    "prebuild": "cd client && npm ci",
+    "build": "cd client && npm run build",
+    "build:full": "npm run install:deps && npm run build"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
