@@ -11,7 +11,7 @@ function seedData() {
 
   // Staff
   const staffData = [
-    { name: 'John Smith', role: 'Farm Manager', email: 'john.smith@widebaaquatics.com.au', phone: '0412 345 678' },
+    { name: 'John Smith', role: 'Farm Manager', email: 'john.smith@widebayaquatics.com.au', phone: '0412 345 678' },
     { name: 'Sarah Jones', role: 'Senior Aquarist', email: 'sarah.jones@widebayaquatics.com.au', phone: '0423 456 789' },
     { name: 'Tom Williams', role: 'Aquarist', email: 'tom.williams@widebayaquatics.com.au', phone: '0434 567 890' },
     { name: 'Lisa Chen', role: 'Aquarist', email: 'lisa.chen@widebayaquatics.com.au', phone: '0445 678 901' },
