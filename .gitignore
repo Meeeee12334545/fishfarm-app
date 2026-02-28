@@ -4,4 +4,6 @@ server/node_modules/
 client/dist/
 data/
 *.db
+*.db-shm
+*.db-wal
 .env
