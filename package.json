@@ -1,0 +1,14 @@
+{
+  "name": "fishfarm-app",
+  "version": "1.0.0",
+  "description": "Wide Bay Aquatics - Fish Farm Management App",
+  "scripts": {
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "start": "cd server && npm start",
+    "build": "cd client && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
