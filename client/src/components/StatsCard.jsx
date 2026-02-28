@@ -1,0 +1,36 @@
+import React from 'react';
+
+export default function StatsCard({ title, value, icon: Icon, color = 'blue', subtitle }) {
+  const colors = {
+    blue: 'bg-blue-50 text-blue-700 border-blue-200',
+    teal: 'bg-teal-50 text-teal-700 border-teal-200',
+    green: 'bg-green-50 text-green-700 border-green-200',
+    yellow: 'bg-yellow-50 text-yellow-700 border-yellow-200',
+    red: 'bg-red-50 text-red-700 border-red-200',
+    orange: 'bg-orange-50 text-orange-700 border-orange-200',
+  };
+  const iconColors = {
+    blue: 'bg-blue-100 text-blue-600',
+    teal: 'bg-teal-100 text-teal-600',
+    green: 'bg-green-100 text-green-600',
+    yellow: 'bg-yellow-100 text-yellow-600',
+    red: 'bg-red-100 text-red-600',
+    orange: 'bg-orange-100 text-orange-600',
+  };
+  return (
+    <div className={`rounded-xl border p-5 ${colors[color]}`}>
+      <div className="flex items-start justify-between">
+        <div>
+          <p className="text-sm font-medium opacity-80">{title}</p>
+          <p className="text-3xl font-bold mt-1">{value}</p>
+          {subtitle && <p className="text-xs mt-1 opacity-70">{subtitle}</p>}
+        </div>
+        {Icon && (
+          <div className={`p-3 rounded-lg ${iconColors[color]}`}>
+            <Icon size={22} />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
