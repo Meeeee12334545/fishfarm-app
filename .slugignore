@@ -1,0 +1,8 @@
+# Files to ignore when deploying to Heroku/similar platforms
+README.md
+DEPLOY.md
+.git
+.gitignore
+*.md
+.vscode
+.devcontainer

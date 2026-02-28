@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: fishfarm-app
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001

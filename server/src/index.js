@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const db = require('./db');
 
 const app = express();
@@ -8,6 +9,11 @@ const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from the public directory in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../public')));
+}
 
 // Routes
 app.use('/api/tanks', require('./routes/tanks'));
@@ -24,6 +30,13 @@ app.use('/api/dashboard', require('./routes/dashboard'));
 app.use('/api/seed', require('./routes/seed'));
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', message: 'Wide Bay Aquatics API running' }));
+
+// Serve client app in production
+if (process.env.NODE_ENV === 'production') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+  });
+}
 
 // Auto-seed if DB is empty
 const staffCount = db.prepare('SELECT COUNT(*) as count FROM staff').get();
